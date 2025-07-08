@@ -5,14 +5,16 @@ from bs4 import BeautifulSoup
 from msal import ConfidentialClientApplication
 import base64
 from fastapi import FastAPI, Request
-import os
 
 app = FastAPI()
 
 # === Config ===
+import os
+
 CLIENT_ID     = os.getenv("CLIENT_ID")
 CLIENT_SECRET = os.getenv("CLIENT_SECRET")
 TENANT_ID     = os.getenv("TENANT_ID")
+SCOPE = ["https://graph.microsoft.com/.default"]
 
 API_COMERCIAL = "https://chatbot-gateway-4xpqf1tp.uc.gateway.dev/consulta-con-imagen"
 API_KEY       = "AIzaSyA2hWFYOgx2Nea82xE-KrSQY67HlZVSnT8"
